@@ -81,6 +81,19 @@ a:focus {
           box-shadow: none;
 }
 
+.btn-primary {
+  background-color: #7335b7; /* Düğme rengi */
+  color: #ffffff; /* Yazı rengi */
+  border: none; /* Kenarlık olmadan */
+  padding: 10px 20px; /* Dolgular */
+  text-decoration: none; /* Alt çizgi olmadan */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px; /* Yuvarlatılmış köşeler */
+}
+
 /*header section*/
 .hero_area {
   position: relative;
@@ -98,7 +111,7 @@ a:focus {
 
 .sub_page .hero_area {
   min-height: auto;
-  border-radius: 0 0 45px 0;
+  border-radius: 0 0 0px 0;
 }
 
 .header_section {
