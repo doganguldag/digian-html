@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% block title %}Active Service{% endblock %}
+{% block content %}
+{% for service in services %}
+    {% if service.title == servicename %}
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-left">
+                        <h2>{% if servicename == 'link_building' %}
+                            Link Building
+                        {% elif servicename == 'seo' %}
+                            On page SEO
+                        {% elif servicename == 'email_marketing' %}
+                            Email Marketing
+                        {% elif servicename == 'online_marketing' %}
+                            Online Marketing
+                        {% elif servicename == 'artificial_consulting' %} 
+                            Artificial Consulting
+                        {% elif servicename == 'advertisement_management' %} 
+                            Advertisment Management
+                        {% elif servicename == 'influencing_brand' %} 
+                            Advertisment Management
+                            
+                        {% endif %}</h2>
+                        <p class="mb-4">{{service.description}}</p>
+                        
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ url_for('index') }}" onclick="showAlert()">Go Back To Home</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Sağ tarafta resim kutusunu ekleyin -->
+                        <img src={{url_for('static', filename=service.photo_url)}} alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+
