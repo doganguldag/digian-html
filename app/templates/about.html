@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% block title %}About{%endblock%}
+{%block content%}
+  <section class="about_section layout_padding layout_margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              This company specializes in offering tailored e-commerce SEO consulting services, empowering businesses to optimize their online presence and drive targeted traffic. Leveraging their expertise, they guide clients in enhancing their websites for effective e-commerce success. With a focus on customized SEO strategies for e-commerce platforms, this service provider plays a pivotal role in helping clients maximize their digital reach and achieve their online sales goals.
+            </p>
+            <a href="{{ url_for('index') }}">
+              Go Back to Home
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {%endblock%}
+
+  
+
+ 
