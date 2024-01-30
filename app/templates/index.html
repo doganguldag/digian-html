@@ -1,0 +1,317 @@
+
+{% extends "base.html" %} {% block title %}Home{%endblock%}
+
+{%block content%}
+<div class="hero_area"> <!-- sonradan ekledik -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Digital Marketing Experts
+                    </h1>
+                    <p>
+                      Digital marketing experts excel in navigating online platforms, leveraging their expertise in social media, search engines, and content strategies. Armed with insights into market trends and consumer behavior, they craft targeted campaigns for maximum impact. These professionals play a vital role in enhancing businesses' online presence, fostering engagement, and achieving marketing success in the dynamic digital realm.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{{ url_for('contact') }}" class="btn1">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/about-img.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      About Us
+                    </h1>
+                    <p>
+                      As a dynamic team passionate about digital excellence, we are dedicated to elevating your online presence. With a focus on innovation and tailored solutions, our expertise extends to e-commerce SEO consulting, ensuring your business thrives in the ever-evolving digital landscape. Trust us to optimize your online journey, attract the right audience, and propel your success. Welcome to a partnership where your goals become our mission.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{{ url_for('about') }}" class="btn1">
+                        About Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/contact-img.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Services
+                    </h1>
+                    <p>
+                      Boost your online sales with our specialized e-commerce SEO consulting! We tailor strategies to optimize your site, attract target traffic, and maximize digital reach. Elevate your online presence and achieve sales success with us!
+                    </p>
+                    <div class="btn-box">
+                      <a href="{{ url_for('service') }}" class="btn1">
+                        Our Services
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+</div> <!-- sonradan ekledik -->
+
+<!-- service section -->
+<section class="service_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Our Services
+      </h2>
+      <p>
+        Important practices that will make your organization stand out.
+      </p>
+    </div>
+    <div class="row">
+
+      {% for service in services %}
+        <div class="col-md-6 col-lg-3">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename=service.photo_url) }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{service.pageTitle}}
+              </h5>
+              <p>
+                {{service.description}}
+              </p>
+              <a href="{{ url_for('activeservice', servicename=service.title) }}">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</section>
+  <!-- end service section -->
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              As a dynamic team passionate about digital excellence, we are dedicated to elevating your online presence. With a focus on innovation and tailored solutions, our expertise extends to e-commerce SEO consulting, ensuring your business thrives in the ever-evolving digital landscape. Trust us to optimize your online journey, attract the right audience, and propel your success. Welcome to a partnership where your goals become our mission.
+            </p>
+            <a href="{{ url_for('about') }}">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/about-img.png') }}" alt="">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+  <!-- case section -->
+  <section class="case_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Case Studies
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/case-1.jpg') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                E-Commerce Platform Enhancement
+              </h5>
+              <p>
+                Challenge: The client was facing low conversion rates and high bounce rates on their e-commerce platform. Users were frequently abandoning their shopping carts.
+              </p>
+              <a href="{{ url_for('casestudy1') }}">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/case-2.jpg') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Digitization of Business Processes
+              </h5>
+              <p>
+                Challenge: ABC Financial was experiencing efficiency loss due to manual business processes. Manual handling of documents resulted in lengthy approval processes and increased errors.
+              </p>
+              <a href="{{ url_for('casestudy2') }}">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end case section -->
+
+  <!-- Client Section -->
+<section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+      <div class="text-center">
+          <h6 class="section-title bg-primary text-white px-3 py-2 d-inline-block">Testimonials</h6>
+          <h1 class="mb-4">What Our Customers Say</h1>
+      </div>
+
+      <div class="owl-carousel testimonial-carousel">
+          {% for customer in customers %}
+              <div class="testimonial-item text-center">
+                  <img class="rounded-circle mb-3" src="{{ url_for('static', filename='images/client.jpg') }}" alt="Client Image" style="width: 80px; height: 80px;">
+                  <h5 class="mb-0">{{customer.name}}</h5>
+                  <div class="testimonial-text bg-light p-4">
+                      <p class="mb-0">{{customer.comment}}</p>
+                  </div>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+</section>
+<!-- End Client Section -->
+
+<!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 col-lg-4 offset-md-1">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                Request A Call back
+              </h2>
+            </div>
+            <form action="{{ url_for('add_message') }}" method="post" class="form">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" name="phone" placeholder="Phone" required="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject" required="">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required=""></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group login-btn">
+                    <button class="btn" type="submit">Send</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7 px-0">
+          <div class="map_container">
+            <div class="map">
+              <!-- Google Maps Embed Code -->
+              <iframe class="position-relative rounded w-100 h-100"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                      frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                      tabindex="0">
+              </iframe>
+              <!-- End Google Maps Embed Code -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
